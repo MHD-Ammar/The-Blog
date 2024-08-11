@@ -62,11 +62,11 @@ export default function Navbar() {
         <Link href="./">THE-BLOG</Link>
       </div>
       <Menu cls="max-lg:hidden " />
-      <button className="lg:hidden" onClick={() => setOpen((prev) => !prev)}>
+      <button className="lg:hidden h " onClick={() => setOpen((prev) => !prev)}>
         Menu
       </button>
       {open && (
-        <Menu cls="flex-col h-screen absolute top-24 right-0 w-2/4 lg:hidden " />
+        <Menu cls="bg-[--bg] flex-col h-full absolute top-24 right-0 w-2/4 lg:hidden " />
       )}
     </div>
   );

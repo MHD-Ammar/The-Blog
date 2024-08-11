@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 export default function Home() {
   return (
-    <div className="flex gap-28 item">
-      <div className="flex-1 flex flex-col gap-14">
+    <div className="flex gap-28">
+      <div className="flex-1 flex flex-col gap-14 ">
         <h1 className="text-8xl">Creative Thought Agency.</h1>
         <p className="text-lg">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et odit
