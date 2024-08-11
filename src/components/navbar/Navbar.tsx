@@ -58,7 +58,9 @@ export default function Navbar() {
   );
   return (
     <div className="h-24 flex justify-between items-center">
-      <div className="text-2xl font-bold none ">THE-BLOG</div>
+      <div className="text-2xl font-bold none ">
+        <Link href="./">THE-BLOG</Link>
+      </div>
       <Menu cls="max-lg:hidden " />
       <button className="lg:hidden" onClick={() => setOpen((prev) => !prev)}>
         Menu
