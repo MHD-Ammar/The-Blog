@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-
+import Image from "next/image";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathName = usePathname();
@@ -62,11 +62,16 @@ export default function Navbar() {
         <Link href="./">THE-BLOG</Link>
       </div>
       <Menu cls="max-lg:hidden " />
-      <button className="lg:hidden h " onClick={() => setOpen((prev) => !prev)}>
-        Menu
-      </button>
+      <Image
+        className="lg:hidden "
+        src="/menu.png"
+        alt=""
+        height={30}
+        width={30}
+        onClick={() => setOpen((prev) => !prev)}
+      />
       {open && (
-        <Menu cls="bg-[--bg] flex-col h-full absolute top-24 right-0 w-2/4 lg:hidden " />
+        <Menu cls="bg-[--bg] flex-col h-full absolute top-24 right-0 w-2/4 lg:hidden z-50" />
       )}
     </div>
   );
