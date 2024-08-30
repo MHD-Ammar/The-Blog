@@ -1,6 +1,6 @@
-"use client";
 import PostCard from "@/components/postCard/PostCard";
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
+import { getPosts } from "@/lib/data";
 interface Post {
   userId: number;
   id: number;
@@ -8,24 +8,28 @@ interface Post {
   body: string;
 }
 
-export default function BlogPage() {
-  const [posts, setPost] = useState<Post[]>([]);
-  useEffect(() => {
-    const getPostData = async () => {
-      const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
-        cache: "no-store", //the defult is force-cache
-        next: { revalidate: 3600 }, //to update data each 1 hour
-      });
-      if (!res.ok) {
-        throw new Error("Something went wrong");
-      } else {
-      }
-      const data = await res.json();
-      setPost(data);
-    };
+export default async function BlogPage() {
+  //Fetch data with an api using useEffect
+  // const [posts, setPost] = useState<Post[]>([]);
+  // useEffect(() => {
+  //   const getPostData = async () => {
+  //     const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+  //       cache: "no-store", //the defult is force-cache
+  //       next: { revalidate: 3600 }, //to update data each 1 hour
+  //     });
+  //     if (!res.ok) {
+  //       throw new Error("Something went wrong");
+  //     } else {
+  //     }
+  //     const data = await res.json();
+  //     setPost(data);
+  //   };
 
-    getPostData();
-  }, []);
+  //   getPostData();
+  // }, []);
+
+  //without API
+  const posts = await getPosts();
   return (
     <>
       <div className="flex flex-wrap gap-5 justify-evenly">

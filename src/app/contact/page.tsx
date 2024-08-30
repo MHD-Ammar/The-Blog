@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 export default function ContactPage() {
   return (
-    <div className="flex justify-between my-14 max-lg:justify-center">
+    <div className="flex justify-between my-14 max-lg:justify-center gap-10">
       <div className="relative flex-1 h-[500] max-lg:hidden">
         <Image
           src="/contact.png"
